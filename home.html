@@ -3,8 +3,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Wowzers - Home</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
 </head>
 <body>
     <style>
@@ -22,7 +22,17 @@
         }
 
         .custom-navbar {
-            background-color:#2f8fcf !important;
+            background-color: #2f8fcf !important;
+        }
+
+        .custom-bg {
+            background-color: #4c4a53;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        svg {
+            stroke-width: 2;
         }
     </style>
 
@@ -55,5 +65,20 @@
             </div>
         </div>
     </nav>
+
+    <div class="container py-4 mt-3 rounded-3 custom-bg">
+        <div class="p-3 mb-4 custom-bg">
+            <div class="container-fluid py-5 custom-bg">
+                <h3 class="display-5 fw-bold">Download Wowzers</h3>
+                <p class="col-md-8 fs-4">
+                    Idk bro text
+                </p>
+                <button class="btn btn-primary btn-lg">
+                    <img src="imgs/download.svg" style="filter:invert(1)" class="icon me-2" icon width="20" height="20">
+                    Download
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
