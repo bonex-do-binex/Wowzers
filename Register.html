@@ -1,0 +1,226 @@
+Re<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Wowzers - Register</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: "CustomFont";
+            src: url("./Fonts/Fontspring-DEMO-toruspro-regular.otf");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: CustomFont, sans-serif;
+            background-color: #37363b;
+            color: white;
+        }
+
+        .email-label {
+            font-family: sans-serif;
+        }
+
+        .custom-navbar {
+            background-color: #2f8fcf !important;
+        }
+
+        .custom-bg {
+            background-color: #4c4a53;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #email {
+            font-family: Arial, CustomFont, sans-serif
+        }
+
+        #birthday {
+            font-family: Arial, CustomFont, sans-serif
+        }
+
+        svg {
+            stroke-width: 2;
+        }
+
+        .btn-google img {
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .btn-google:hover {
+            color: black;
+        }
+
+
+        .remember-label {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            background-color: #4c4a53;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+            .login-form a {
+                text-decoration: none;
+            }
+
+            .login-form button {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+        .login-column {
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #37363b;
+        }
+
+        .btn-wowzers {
+            background-color: #0086ea;
+            color: white;
+            font-weight: 600;
+        }
+
+            .btn-wowzers:hover {
+                background-color: #075c9b;
+            }
+    </style>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand">Wowzers</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Support</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Logs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Account</a>
+                    </li>
+                </ul>
+
+                <div>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-column">
+        <div id="login-form" class="login-form">
+            <h3 class="mb-3">Welcome</h3>
+
+            <div class="mb-2">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" minlength="3" pattern="^[A-Za-z\s]+$" placeholder="John Nameski" class="form-control" required />
+                <div class="invalid-feedback">
+                    Please enter a valid name.
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="birthday" class="form-label">Birthday</label>
+                <input type="date" id="birthday" class="form-control" required />
+                <div class="invalid-feedback">
+                    Please enter a valid birthday.
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" placeholder="name@email.com" class="form-control" required />
+                <div class="invalid-feedback">
+                    Please enter a valid email.
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" minlength="8" placeholder="8 characters minimum" class="form-control" required />
+                <div class="invalid-feedback">
+                    Please enter a valid password.
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-0">
+                <div class="remember-label">
+                    <input type="checkbox" id="remember" class="form-check-input me-2" />
+                    <label for="remember">Remember for 30 Days</label>
+                </div>
+            </div>
+
+            <button id="SignInBtn" class="btn btn-wowzers">Sign In</button>
+            <button style="background-color:#fff" class="btn btn-google mt-2">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" />
+                Sign In with Google
+            </button>
+
+            <p class="mt-3 mb-0 text-center">
+                Already have an account? <a href="login.html" class="link">Log In</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const signInBtn = document.getElementById("SignInBtn");
+
+        signInBtn.addEventListener("click", function (event) {
+            const form = document.getElementById("login-form");
+
+            // Prevent default form submission if you later wrap inputs in <form>
+            event.preventDefault();
+
+            // Add Bootstrap validation styling
+            form.classList.add("was-validated");
+
+            // Check validity of all inputs inside the container
+            const inputs = form.querySelectorAll('input');
+            let isFormValid = true;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                // Form is valid → do something (e.g., submit)
+                alert("All fields are valid!");
+            }
+        });
+    </script>
+</body>
+</html>
