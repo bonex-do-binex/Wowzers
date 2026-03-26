@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Wowzers - Home</title>
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <script src="redirect.js"></script>
 </head>
 <body>
     <style>
@@ -46,19 +47,19 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Support</a>
+                        <a class="nav-link" aria-current="page" href="support.html">Support</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Logs</a>
+                        <a class="nav-link" aria-current="page" href="Logs.html">Logs</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Account</a>
+                        <a class="nav-link" aria-current="page" href="account.html">Account</a>
                     </li>
                 </ul>
 
@@ -69,6 +70,10 @@
             </div>
         </div>
     </nav>
+
+    <div id="error-message" class="alert alert-danger rounded-3 d-none fixed-top mx-auto mt-3" role="alert" style="max-width: 600px; z-index: 1050;">
+       
+    </div>
 
     <div class="container py-4 mt-3 rounded-3 custom-bg">
         <div class="p-3 mb-4 custom-bg">
@@ -99,5 +104,7 @@
             </div>
         </div>
     </div>
+
+
 </body>
 </html>
